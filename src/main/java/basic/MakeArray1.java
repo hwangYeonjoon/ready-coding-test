@@ -28,8 +28,9 @@ public class MakeArray1 {
 
         MakeArray1 solutuin  = new MakeArray1();
 
-        System.out.println("solutuin = " + Arrays.toString(solutuin.soulution1(n,k)));
-        System.out.println("solutuin = " + Arrays.toString(solutuin.soulution2(n,k)));
+        System.out.println("solutuin1 = " + Arrays.toString(solutuin.soulution1(n,k)));
+        System.out.println("solutuin2 = " + Arrays.toString(solutuin.soulution2(n,k)));
+        System.out.println("solutuin3 = " + Arrays.toString(solutuin.soulution3(n,k)));
 
     }
 
@@ -43,7 +44,13 @@ public class MakeArray1 {
 
 
     public int[] soulution2(int n ,int k){
-
         return IntStream.rangeClosed(1,n).filter(i -> i % k == 0).toArray();
     }
+
+    public int[] soulution3(int n ,int k){
+        return IntStream.rangeClosed(1,n/k).map(i -> i*k).toArray();
+    }
+
+
+
 }
